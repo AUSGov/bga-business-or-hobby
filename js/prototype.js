@@ -294,10 +294,23 @@ $(document).ready(function () {
         
     });
     
+    
+    // TOOL FUNCTIONALITY
+    /*------------------- Disabled buttons -------------------*/
+    $(".disabled").on('click', function(e){
+       e.preventDefault(); 
+    });
+    $(".radio-item label").on('click', function(){
+    
+        $(this).parents(".radio-item").find("label").removeClass('radio-focus');
+        $(this).addClass("radio-focus");
+        
+        $(this).parents("form").addClass("item-checked");
+        $(this).parents("form").find(".disabled").removeClass("disabled");
+    });
+    
+    
 
     
 }); // END doc ready
 
-$(window).on( "unload", function(){
-
-} );

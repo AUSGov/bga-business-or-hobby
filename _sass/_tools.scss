@@ -1,0 +1,228 @@
+.page-header-theme-tool {
+    background: #EFD8E7;
+    padding: 64px 15px !important;
+    
+    .page-header-intro {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    svg {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+    img {
+        width: 100%;
+        max-width: 425px;
+        margin: 0 auto 32px;
+        display: block;
+    }
+    @media (max-width: 576px){
+        padding: 64px 15px 48px 15px !important;
+        
+        h1 {
+            font-size: 32px;
+            line-height: 37px;
+        }
+    }
+    @media (min-width: 768px) {
+        
+        min-height: 384px;
+        
+        .header-image-wrapper {
+            width: inherit;
+            margin-top: 16px;
+            svg, img {
+                position: absolute;
+                padding-right: 30px;        
+            }
+        }
+    }
+}
+.top-of-page {
+    padding-top: 0;
+}
+
+.tool-main-section {
+   
+    /* PROGRESS BAR */
+    .progress-percentage {
+        margin-bottom: 4px;
+        
+        p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            line-height: normal;
+            color: $grey-darker;
+            display: inline;
+        }
+    }
+
+    .progress {
+        display: flex;
+        overflow: hidden;
+        font-size: 12px;
+        border-radius: 4px;
+        height: 4px;
+        background: $grey-light;
+        margin-bottom: 48px;
+        
+        .progress-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: $white;
+            text-align: center;
+            white-space: nowrap;
+            height: 4px;
+            background: $purple-dark;
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+    }
+    /* Media Query for progress bar */
+    @media (max-width: 576px) {
+
+        .progress,
+        .progress-bar {
+            height: 3px;
+        }
+        .progress-percentage p {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+    }
+    
+    /* CONTEXTUAL HELP */
+    .contextual-help {
+        .help-question {
+            
+            display: flex;
+            
+            svg {
+                margin-right: 8px;
+                margin-top: 6px;
+            }
+            p {
+                cursor: pointer;
+                color: #4569A0;
+                text-decoration: underline;
+                padding: 0 0 0 0;
+                margin-bottom: 16px;
+                font-size: 14px;
+            }          
+        }
+        .help-answer {
+            display: none;
+            margin-bottom: 32px;
+            
+            > *:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+            > *:last-child li:last-of-type {
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+            p {
+                font-size: 14px;
+                border-left: solid $blue-primary-mid 2px;
+                padding: 0 0 16px 14px;
+                margin-left: 2px;
+            }
+        }
+    }
+    
+    /* RADIO BUTTONS */
+    .radio-item {
+        margin-bottom: 32px;
+        
+        input[type="radio"] {
+            opacity: 0;
+            width: 0px;
+            height: 0px;
+        }
+        label {
+            position: relative;
+            padding: 0 0 0 32px;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 20px;
+            width: 100%;
+            display: block;
+            font-size: 16px;
+            @include font-format($font-family, $font-regular, normal);
+            
+            &:before {
+                height: 24px;
+                width: 24px;
+                content: " ";
+                background: url(../assets/radio-not-selected.svg) no-repeat;
+                background-size: 24px 24px;
+                position: absolute;
+                top: calc(50% - 12px);
+                left: 0;
+            }
+            
+            &.radio-focus {
+                &:before {
+                   background: url(../assets/radio-selected.svg) no-repeat;
+                    background-size: 24px 24px;
+                }
+            }
+        }
+    }
+    
+    
+    /* BUTTONS */
+    form {
+        .form-buttons {
+            display: flex;
+
+            .standardcta-button-wrapper {
+                width: 170px;
+                max-width: 170px;
+                margin: 0 16px 32px 0;
+                height: 48px;
+
+                .theme-button-primary {
+                    color: $white;
+                    background: $blue-primary-mid;
+                    border: $blue-primary solid 2px;
+                    box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;
+                    display: block;
+                    padding-top: 14px;
+
+                    &:hover {
+                        color: $white;
+                    }
+                    &:visited {
+                        border: $blue-primary solid 2px;
+                        background: $blue-primary-mid;
+                    }
+                }
+                &.disabled {
+                    .theme-button-primary {
+                        color: $grey;
+                        background: $white;
+                        border: solid 2px $grey;
+                        cursor: default;
+
+                        &:hover,
+                        &:visited,
+                        &:focus,
+                        &:active {
+                            color: $grey;
+                            background: $white !important;
+                            border: solid 2px $grey !important;
+                            cursor: default;
+                            box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px !important;
+                            transform: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
